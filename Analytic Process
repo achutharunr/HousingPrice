@@ -1,0 +1,37 @@
+Data Deep Dive
+
+- Train data is 1460 x 79
+
+Features
+
+- Id column is just row number and can be removed
+- All the grading (Excellent, Average, ...) will have high bias
+- MSZoning is a categorical variable - no NAs. Moving from rural to residential causes the price of the same property to be higher - https://docs.google.com/viewer?url=https%3A%2F%2Fwww.rba.gov.au%2Fpublications%2Frdp%2F2018%2Fpdf%2Frdp2018-03.pdf
+- LotFrontage is a numerical variable - has NAs. Figure out how to handle NAs?
+- Street is a categorical variable - no NAs. Check if "Pave" has more value than "Grav"?
+- Alley is a categorical variable - no NAs. NAs mean that no alley access. Most houses don't have alley access. Check if alley access will have higher price? High bias
+- Utilities is a categorical variable - no NAs. Do one hot encoding with "AllPub" as 0 rest all as one, since 99% is "AllPub"?  Should remove as 99% is one category of possible four? I vote for remove because of high bias
+- Condtion2 is a categorical variable - no NAs. Highly biased to "Norm"
+- YearBuilt - will the price decrease with year or no? - will subtract from current year, bin it and make it categorical
+- BldgType & HouseStyle seem to be derived from MSSubClass - see which ones to drop
+- Remodelled or no? Can be derived from YearBuilt & YearRemodAdd
+- MasVnrType has NAs
+- MasVnrArea has NAs
+- For BsmtExposure & other basement variables, NA is just no Basement
+- Electrical has NAs
+- LowQualFinSF has high bias
+- BsmtHalfBath has high bias
+- Functional has high bias for "Type"
+- FireplaceQu - NA means no FirePlace
+- Garage variables - NA means no Garage
+- PavedDrive has high bias
+- 33SsnPorch has high bias
+- ScreenPorch has high bias
+- PoolQC has high bias
+- Pool, Fence and MiscFeature - NA means no pool/fence/MiscFeature
+
+Feature Groups:
+
+NA means not present:
+
+Alley, BsmtCond, BsmtQual, BsmtExposure, BsmtUnfSF, BsmtFinSF1, BsmtFinSF2, BsmtFinType2, B
