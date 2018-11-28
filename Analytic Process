@@ -30,8 +30,6 @@ Features
 - PoolQC has high bias
 - Pool, Fence and MiscFeature - NA means no pool/fence/MiscFeature
 
-Feature Groups:
-
-NA means not present:
-
-Alley, BsmtCond, BsmtQual, BsmtExposure, BsmtUnfSF, BsmtFinSF1, BsmtFinSF2, BsmtFinType2, B
+Derived Variables
+- Age of Garage from YrSold - GarageYrBlt
+- Age of whole house from YrSold - YearBuilt/YearRemodAdd(Whichever is later)
