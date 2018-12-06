@@ -32,7 +32,8 @@ Features
 
 Derived Variables
 - Age of Garage from YrSold - GarageYrBlt. Might be negative since the garage may have already existed or converted from a previous establishment
-- Age of whole house from YrSold - YearBuilt/YearRemodAdd(Whichever is later)
+- Age of whole house from YrSold - YearBuilt
+  If house is brand new, age will be zero, in which case, although the brand new house may have a high price, since it is being multiplied by zero, will the coefficient have any effect?
 - Age of remodeling from YrSold - YearRemodAdd
   - Row number 523 is negative. It could be a case where the remodelling was promised at time of sale and done after or house bought and renovated
     by owners themselves. Setting all negative to 0.
